@@ -124,7 +124,7 @@ body {
   text-align: center;
 }
 
-.header__button {
+.button {
   width: 192px;
   height: 60px;
   background: #dc1344;
@@ -133,8 +133,18 @@ body {
   border-radius: 40px;
 }
 
+.button--rectangle {
+  width: 212px;
+  height: 56px;
+  border-radius: 5px;
+}
+
+.button--text-small {
+  font-size: 18px;
+}
+
 @media (max-width: 768px) {
-  .header__button {
+  .button {
     display: none;
   }
 }
@@ -258,17 +268,6 @@ body {
 .banner__location:before {
   content: '';
   background: url("/img/map-localization.png") no-repeat;
-}
-
-.banner__button {
-  width: 212px;
-  height: 56px;
-  background: #dc1344;
-  color: #fff;
-  border: none;
-  font-size: 18px;
-  padding: 0;
-  border-radius: 5px;
 }
 
 .cargo {

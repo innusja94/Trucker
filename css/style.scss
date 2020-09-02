@@ -96,19 +96,26 @@ body {
             
         }
     }
-    &__button {
-        width: 192px;
-        height: 60px;
-        background: #dc1344;
-        color: #fff;
-        border: none;
-        border-radius: 40px;
-        @media (max-width: 768px) {
-            display: none;
-        }
+}
+     
+.button {
+    width: 192px;
+    height: 60px;
+    background: #dc1344;
+    color: #fff;
+    border: none;
+    border-radius: 40px;
+    &--rectangle {
+        width: 212px;
+        height: 56px;
+        border-radius: 5px;
     }
-    
-    
+    &--text-small {
+        font-size: 18px; 
+    }
+    @media (max-width: 768px) {
+        display: none;
+    }
 }
 
 .menu {
@@ -205,14 +212,10 @@ body {
         
     }
     &__button {
-        width: 212px;
-        height: 56px;
-        background: #dc1344;
-        color: #fff;
-        border: none;
-        font-size: 18px;
-        padding: 0;
-        border-radius: 5px;
+        
+        
+        
+        
     }
 }
 
