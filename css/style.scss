@@ -27,6 +27,7 @@ body {
 }
 
 .header {
+    width: 100%;
     height: 120px;
     background: #f6f6f6;
     display: flex;
@@ -66,13 +67,20 @@ body {
         margin-left: 60px;
         font-size: 16px;
         font-weight: bold;
+        
     }
     &__info {
         display: flex;
         justify-content: center;
         align-items: center;
+        @media (max-width: 992px) {
+            width: 33.33%;
+        }
         @media (max-width: 768px) {
             margin-right: 25px;
+        }
+        @media (max-width: 576px) {
+            display: none;
         }
     }
     &__contact {
@@ -84,9 +92,10 @@ body {
         & span {
             color: #dc1344;
         }
-        @media (max-width: 768px) {
-            
-        }
+        // @media (max-width: 992px) {
+        //     width: 33.33%;
+        // }
+        
     }
     &__email {
         font-size: 16px;
@@ -113,9 +122,20 @@ body {
     &--text-small {
         font-size: 18px; 
     }
-    @media (max-width: 768px) {
-        display: none;
+    &--disabled {
+        @media (max-width: 768px) {
+            display: none;
+        } 
     }
+    
+}
+
+i.fas {
+    color: #bfbfbf;
+    margin: 20px 0 0 16px;
+    position: absolute;
+    z-index: 1;
+  
 }
 
 .menu {
@@ -175,23 +195,28 @@ body {
             padding: 0 30px 0 30px; 
         }
     }
-    &__price {
-        height: 173px;
-        background: #ffe01d;
-        margin-top: 80px;
-        position: relative;
-        @media (max-width: 768px) {
-            height: 230px;
-        }
-    }
     
-    &__price-title {
+}
+
+.form {
+    height: 173px;
+    background: #ffe01d;
+    margin-top: 80px;
+    position: relative;
+    text-align: center;
+    @media (max-width: 1077px) {
+        height: 100%;
+    }
+    @media (max-width: 992px) {
+        height: 100%;
+    }
+    @media (max-width: 768px) {
+        height: 100%;
+    }
+    &__title {
         font-size: 25px;
         text-align: center;
         padding: 32px;
-    }
-    &__price-form {
-        text-align: center;
     }
     &__location,
     &__city,
@@ -199,23 +224,26 @@ body {
         width: 280px;
         height: 56px;
         font-size: 16px;
-        padding-left: 45px;
+        padding-left: 40px;
+        position: relative;
     }
     &__phone {
         @media (max-width: 768px) {
             margin-top: 10px;
         }
     }
-    &__location:before {
-        content: '';
-        background: url('/img/map-localization.png') no-repeat;
+    @media (max-width: 992px) {
+        width: 100%;
+    }
+    @media (max-width: 768px) {
+        width: 100%;  
         
     }
-    &__button {
-        
-        
-        
-        
+    @media (max-width: 576px) {
+        width: 100%;
+    }
+    @media (max-width: 320px) {
+        width: 100%;
     }
 }
 
@@ -231,27 +259,28 @@ body {
         }
     }
     &__grid-boxes {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 0.5fr;
-        margin-top: 32px;
-        @media (max-width: 768px) {
-            display: grid;
-            grid-template-rows: 180px 160px 160px;
-            grid-template-columns: 1fr 1fr;
-            grid-gap: 50px;
-            padding: 0 80px 0 100px;   
-        }
-        @media (max-width: 459px) {
-              display: flex;
-              flex-direction: column;
-              justify-content: center;
-              align-items: center;
-          }
+        display: flex;
+        flex-wrap: wrap;  
+        margin-top: 32px;  
     }
     &__grid-box {
-        width: 248px;
-        margin-bottom: 52px;
+        width: 25%;
+        padding: 0 25px 52px 25px;
         text-align: center;
+        @media (max-width: 992px) {
+            width: 33.33%;
+        }
+        @media (max-width: 768px) {
+            width: 50%;
+            padding: 0 80px 0 100px;   
+        }
+        @media (max-width: 576px) {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+          }
     }
     &__grid-title {
         font-size: 22px;
@@ -261,6 +290,7 @@ body {
         color: #737373;
     }
 }
+
 
 
 .types-of-trucks {
@@ -273,28 +303,30 @@ body {
         
     }
     &__boxes {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        @media (max-width: 768px) {
-            display: grid;
-            grid-template-rows: 450px 450px 450px;
-            grid-template-columns: 1fr 1fr;
-            grid-gap: 50px;
-            padding: 0 80px 0 100px;   
-        }
-        @media (max-width: 459px) {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
     }
     &__box {
-        width: 263px;
+        width: 23%;
         height: 460px;
         background: #f4f6f6;
-        margin-bottom: 27px;
+        margin: 0 19px 27px 0;
         position: relative;
+        @media (max-width: 992px) {
+            width: 33.33%;
+        }
+        @media (max-width: 768px) {
+            width: 50%;  
+            
+        }
+        @media (max-width: 576px) {
+            width: 50%;
+        }
+        @media (max-width: 320px) {
+            width: 100%;
+        }
+
     }
     &__box-img1 {
         padding: 35px 22px 28px 22px;
@@ -319,6 +351,11 @@ body {
     }
     &__box-img8 {
         padding: 12px 0 0 67px;
+    }
+    &__box--size {
+    @media (max-width: 576px) {
+        width: 100%;
+    }
     }
     &__box-title {
         background: #ffe01d;
@@ -356,6 +393,7 @@ body {
         font-size: 18px;
         padding: 0 0 60px 0;
     }
+    
 }
 
 .form-trucks {
@@ -405,7 +443,7 @@ body {
         height: 1.8em;
         margin: 0 0 53px 83px; 
         @media (max-width: 768px) {
-            width: 600px;  
+            width: 50%;  
 
         }
     }   
